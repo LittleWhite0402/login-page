@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帳號密碼登入</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #FFEB3B; /* 亮黃色背景 */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://img.icons8.com/ios/452/new-year.png'); /* 新年圖案 */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 50%;
+        }
+        .login-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h2 {
+            color: #D32F2F;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .login-btn {
+            background-color: #D32F2F;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .login-btn:hover {
+            background-color: #C2185B;
+        }
+        .error-message {
+            color: #D32F2F;
+            font-size: 14px;
+            display: none;
+        }
+        .happy-new-year {
+            font-size: 24px;
+            color: #388E3C;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>登入</h2>
+        <input type="text" id="username" placeholder="請輸入帳號">
+        <input type="password" id="password" placeholder="請輸入密碼">
+        <button class="login-btn" onclick="validateLogin()">登入</button>
+        <p class="error-message" id="error-message">帳號或密碼錯誤，請重新輸入。</p>
+        <p class="happy-new-year">🎉 祝大家新年快樂！ 🎉</p>
+    </div>
+
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var errorMessage = document.getElementById("error-message");
+
+            // 假設的帳號密碼
+            var correctUsername = "user123";
+            var correctPassword = "password123";
+
+            if (username === correctUsername && password === correctPassword) {
+                alert("登入成功！歡迎光臨！");
+                errorMessage.style.display = "none"; // 隱藏錯誤訊息
+            } else {
+                errorMessage.style.display = "block"; // 顯示錯誤訊息
+            }
+        }
+    </script>
+
+</body>
+</html>
